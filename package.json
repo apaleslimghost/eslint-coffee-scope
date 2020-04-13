@@ -1,0 +1,47 @@
+{
+	"name": "eslint-coffee-scope",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/apaleslimghost/eslint-coffee-scope.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/apaleslimghost/eslint-coffee-scope/issues"
+	},
+	"homepage": "https://github.com/apaleslimghost/eslint-coffee-scope#readme",
+	"devDependencies": {
+		"@quarterto/eslint-config": "^1.5.0",
+		"@quarterto/prettier": "^1.1.0",
+		"coffeescript": "^2.5.1",
+		"eslint": "^6.8.0",
+		"husky": "^2.3.0",
+		"lint-staged": "^8.1.7",
+		"prettier": "github:helixbass/prettier#b8818ebd",
+		"prettier-plugin-coffeescript": "^0.1.4"
+	},
+	"eslintConfig": {
+		"extends": [
+			"@quarterto/eslint-config/coffee"
+		]
+	},
+	"prettier": "@quarterto/prettier",
+	"lint-staged": {
+		"*.{js,json}": [
+			"prettier --write",
+			"git add"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	}
+}
