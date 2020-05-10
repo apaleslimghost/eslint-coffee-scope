@@ -17,8 +17,9 @@ module.exports =
 					isFirstAssignment =
 						node is
 						getBlock(context.getScope().block)
-							.body.map ({ expression }) -> expression
+							.body.map (node) -> node.expression ? node
 							.find (n) ->
+								n? and
 								n.type is 'AssignmentExpression' and
 								n.left.type is 'Identifier' and
 								n.left.name is node.left.name
